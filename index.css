@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+:root{
+--button-color:hsl(278, 68%, 11%);
+--button-text-color:#fff;
+--error-text:hsl(0, 100%, 66%);
+--input-hover:hsl(249, 99%, 64%);
+}  
+    
+
+
+
+/* MOBILE DESIGN */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    /* card */
+.card{
+    /* width: 320px; */
+    height: 235px;
+    background-image: url(./images/bg-main-mobile.png);
+}
+.card img{
+    width: 250px;
+}
+.card .front_card {
+    position: absolute;
+    margin: 130px 150px auto 20px;
+}
+.cvc_input{
+    width: 30px;
+    /* background-color: aqua; */
+    position: absolute;
+    top: 110px;
+    left: 245px;
+    text-align: center;
+    color: #fff;
+}
+.default_details{
+    position: absolute;
+    top: 80px;
+    color: #fff;
+    padding: 15px;
+}
+.default_details span{
+    padding-left: 40px;
+}
+/* .circle{
+    width: 50x;
+    height: 50px;
+    background-color: aqua;
+    border-radius: 50px;
+    border: 1px solid black;
+} */
+.card .back_card{
+    margin: 0 0 auto 50px;
+    padding-top: 50px;
+}
+/* card-one */
+.input_cover{
+    width: 300px;
+    padding: 60px 0;
+    margin: auto;
+}
+.input_cover label{
+    padding-top: 25px;
+}
+input{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid #f2f2f2; 
+    width: 300px; 
+    cursor: pointer;
+}
+.input:hover{
+    color: var(--input-hover);
+   
+}
+label{
+    font-size: 12px;
+ 
+ 
+}
+small{
+    line-height: 2;
+    color: var(--error-text);
+}
+/* .card_one_details{
+padding: 80px 20px;
+} */
+/* .card_one_details1 div{
+    width: 100px;
+    
+} */
+.card_one_details1 input{
+    width: 95px;
+}
+
+.card_one_details1 div label{
+display: block;
+
+}
+.card_one_details1  .expiry,.expiry_year,
+.cvc{
+    display: inline-block;
+    
+}
+
+
+button{
+    background-color: var(--button-color) !important;
+    padding: 10px 80px;
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    width: 300px; 
+   
+}
+
+}
+
