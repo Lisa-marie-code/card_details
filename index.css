@@ -129,11 +129,10 @@ display: block;
 }
 /* confirmed */
 .confirm_input{
-    border: 1px solid black;
     width: 300px;
     text-align: center;
     margin: auto;
-    visibility: hidden;
+    display: none;
 }
 .confirm_input p{
    color: var(--confirm-text);

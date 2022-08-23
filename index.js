@@ -13,9 +13,13 @@ function validateNum() {
   }
   }
 
+  
 
+  
 document.getElementById('holder_details').oninput = () =>{
-  document.getElementById('card_name_new').innerText = document.getElementById('holder_details').value;
+ let holder = document.getElementById('card_name_new').innerText = document.getElementById('holder_details').value;
+ console.log(holder);
+ localStorage.setItem('holder',JSON.stringify(holder));
 }
 
 document.getElementById('number_details').oninput = () =>{
@@ -34,3 +38,13 @@ document.getElementById('exp_cvc').oninput = () =>{
   document.getElementById('cvc_newInput').innerText = document.getElementById('exp_cvc').value;
 }
 
+
+
+
+if(validateNum){
+let confirmSuccess = document.getElementById('confirm_cover');
+
+confirmSuccess.style.display = 'block';
+}else{
+  confirmSuccess.style.display = 'none';
+}
