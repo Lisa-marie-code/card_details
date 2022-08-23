@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      href="favicon.icon"
       type="image/png"
       sizes="32x32"
       href="/images/favicon-32x32.png"
@@ -19,11 +18,18 @@
       <div class="card">
         <div class="front_card">
           <img src="/images/bg-card-front.png" alt="" />
-          <div class="circle"></div>
-          <div class="circle1"></div>
+
+          <div class="circle">
+            <svg width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff" /><path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/></svg>
+          </div>
           <div class="default_details">
-            <p>0000 0000 0000 0000</p>
-            <p>JANE APPLESEED <span>00/00</span></p>
+            <p id="card_number_new">0000 0000 0000 0000</p>
+            <p id="card_name_new">JANE APPLESEED </p>
+            <div class="span">
+              <span id="month_span">00/</span>
+              <span id="year_span">00</span>
+            </div>
+           
           </div>
         </div>
         <!-- end of front_card -->
@@ -35,25 +41,27 @@
         </div>
       </div>
 
-      <div class="input_cover">
+      <div class="input_cover" id="input_cover_true" >
         <div class="card_one">
           <div class="card_one_details">
-            <label for="card_name">CARDHOLDER NAME</label>
-            <input
-              type="text"
-              name="card_name"
-              id="card_name"
-              placeholder="e.g. Jane Appleseed"
-            /><br />
-            <small>Can't be blank</small><br />
-            <label for="card_number">CARD NUMBER </label><br />
-            <input
-              type="text"
-              name="card_number"
-              id="card_number"
-              placeholder="e.g. Jane Appleseed"
-            /><br />
-            <small>Wrong Format,numbers only</small>
+                <label for="card_name">CARDHOLDER NAME</label>
+                <input
+                  type="text"
+                  name="card-neutral"
+                  id="holder_details"
+                  placeholder="e.g. Jane Appleseed"
+                /><br />
+                <small>Can't be blank</small><br />
+                <label for="card-number">CARD NUMBER </label><br />
+                <input
+                  type="text"
+                  name="number-exact"
+                  id="number_details"
+                  placeholder="e.g. 1234 1234 1234 1234"
+                /><br />
+                <small id="num_error">Wrong Format,numbers only</small>
+           
+           
           </div>
         </div>
 
@@ -63,7 +71,7 @@
             <input
               type="number"
               name="exp.date"
-              id="exp_date"
+              id="exp_month"
               placeholder="MM"
             /><br>
             <small>Can't be blank</small>
@@ -92,8 +100,8 @@
           </div>
           <!-- end of cvc -->
         </div>
-
-        <button type="submit">Confirm</button>
+    
+        <button type="submit" id="submit" onclick="validateNum()">Confirm</button>
       </div>
 
       <div class="confirm_input">
@@ -101,8 +109,12 @@
         <h3>THANK YOU!</h3>
         <p>We've added your card details</p>
         <button type="submit"> Continue</button>
-      </div>
+    </div>
   
     </div>
+
+
+
+    <script src="./index.js"></script>
   </body>
 </html>

@@ -14,6 +14,9 @@ body{
 --error-text:hsl(0, 100%, 66%);
 --input-hover:hsl(249, 99%, 64%);
 --confirm-text:#8F8694;
+--details-text:10px;
+--default-color:#fff;
+--input-border:1px solid #f2f2f2;
 }  
     
 
@@ -22,6 +25,9 @@ body{
 /* MOBILE DESIGN */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
     /* card */
+    .container{
+
+    }
 .card{
     height: 235px;
     background-image: url(./images/bg-main-mobile.png);
@@ -34,31 +40,42 @@ body{
     margin: 130px 150px auto 20px;
     box-shadow:  rgba(0, 0, 0, 0.142481) 0px 39px 60px;
 }
+.span{
+    font-size: var(--details-text);
+    display: flex;
+    padding-left: 190px;
+    position: absolute;
+   bottom: 20px;
+    
+}
 .cvc_input{
     width: 30px;
-    /* background-color: aqua; */
     position: absolute;
     top: 110px;
     left: 245px;
     text-align: center;
-    color: #fff;
+    color: var(--default-color);
+    font-size: var(--details-text);
 }
 .default_details{
     position: absolute;
-    top: 80px;
-    color: #fff;
+    top: 65px;
+    color: var(--default-color);
     padding: 15px;
 }
-.default_details span{
-    padding-left: 40px;
+
+.default_details p{
+    line-height: 2;
 }
-/* .circle{
-    width: 50x;
-    height: 50px;
-    background-color: aqua;
-    border-radius: 50px;
-    border: 1px solid black;
-} */
+#card_name_new{
+    font-size: var(--details-text);
+   
+}
+.circle{
+    position: absolute;
+    top: 10px;
+    
+}
 .card .back_card{
     margin: 0 0 auto 50px;
     padding-top: 50px;
@@ -77,30 +94,27 @@ input{
     padding: 10px;
     border-radius: 5px;
     border: none;
-    border: 1px solid #f2f2f2; 
+    border: var(--input-border);
     width: 300px; 
     cursor: pointer;
 }
+
 .input:hover{
     color: var(--input-hover);
    
 }
 label{
     font-size: 12px;
- 
- 
 }
 small{
     line-height: 2;
     color: var(--error-text);
+    visibility: hidden;
 }
-/* .card_one_details{
-padding: 80px 20px;
-} */
-/* .card_one_details1 div{
-    width: 100px;
-    
-} */
+#num_error{
+    color: var(--error-text);
+    visibility: hidden;
+} 
 .card_one_details1 input{
     width: 95px;
 }
@@ -119,6 +133,7 @@ display: block;
     width: 300px;
     text-align: center;
     margin: auto;
+    visibility: hidden;
 }
 .confirm_input p{
    color: var(--confirm-text);
