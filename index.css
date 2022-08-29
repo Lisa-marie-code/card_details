@@ -7,7 +7,6 @@
 body{
     font-family: 'Space Grotesk', sans-serif;
 }
-
 :root{
 --button-color:hsl(278, 68%, 11%);
 --button-text-color:#fff;
@@ -18,25 +17,133 @@ body{
 --default-color:#fff;
 --input-border:1px solid #f2f2f2;
 }  
-    
 
+
+ /* DESKTOP DESIGN    */
+ .container{
+   display: grid;
+   grid-template-columns: 480px 960px;
+ }
+ .container_1{
+    margin: 200px 200px 0 400px;
+ }
+ .card{
+    background-image: url(./images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    height: 900px;
+}
+.card img{
+    width: 350px;
+}
+
+.card .front_card{
+    position: absolute;
+    margin: 127px 0 0 264px;
+}
+.front_card .circle{
+    position: absolute;
+    top: 10px;
+    left: 30px;   
+}
+.card .back_card{
+    /* position: absolute; */
+    margin: 367px 0 0 330px;
+}
+input{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    border: var(--input-border);
+    width: 300px; 
+    cursor: pointer;
+}
+.input_cover{
+    width: 300px;
+}
+.input:hover{
+    color: var(--input-hover);
+}
+label{
+    font-size: 12px;
+}
+small{
+    line-height: 2;
+    color: var(--error-text);
+    visibility: hidden;
+}
+button{
+    background-color: var(--button-color) !important;
+    padding: 10px 80px;
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 300px; 
+    cursor: pointer;
+}
+.card_one_details1 div label{
+    display: block;
+    }
+    
+    .card_one_details1  .expiry,.expiry_year,
+    .cvc{
+        display: inline-block;
+    }
+    .card_one_details1 input{
+        width: 95px;
+    }
+    .confirm_input{
+        width: 300px;
+        text-align: center;
+        margin: auto;
+        display: none;
+    }
+.default_details{
+    position: absolute;
+    top: 120px;
+    left: 20px;
+    color: var(--default-color);
+}
+.default_details p{
+    line-height: 2;
+}
+.span{
+    font-size: var(--details-text);
+    display: flex;
+    padding-left: 290px;
+    position: absolute;
+    bottom: 10px;  
+}
+.cvc_input{
+    width: 30px;
+    position: absolute;
+    top: 455px;
+    left: 605px;
+    text-align: center;
+    color: var(--default-color);
+    font-size: var(--details-text);
+}
 
 
 /* MOBILE DESIGN */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
     /* card */
-    .container{
-
-    }
+   .container{
+    display: block;
+   }
+   .container_1{
+    margin: 0;
+   }
+   .card img{
+    width: 250px;
+}
 .card{
     height: 235px;
     background-image: url(./images/bg-main-mobile.png);
 }
-.card img{
-    width: 250px;
-}
+
 .card .front_card {
-    position: absolute;
+   
     margin: 130px 150px auto 20px;
     box-shadow:  rgba(0, 0, 0, 0.142481) 0px 39px 60px;
 }
@@ -45,7 +152,7 @@ body{
     display: flex;
     padding-left: 190px;
     position: absolute;
-   bottom: 20px;
+   bottom: 5px;
     
 }
 .cvc_input{
@@ -59,22 +166,21 @@ body{
 }
 .default_details{
     position: absolute;
-    top: 65px;
+    top: 75px;
+    left: 15px;
     color: var(--default-color);
-    padding: 15px;
+    /* padding: 10px; */
 }
 
-.default_details p{
-    line-height: 2;
-}
+
 #card_name_new{
     font-size: var(--details-text);
    
 }
-.circle{
+.front_card .circle{
     position: absolute;
     top: 10px;
-    
+    left: 10px;   
 }
 .card .back_card{
     margin: 0 0 auto 50px;
@@ -85,31 +191,9 @@ body{
     width: 300px;
     padding: 75px 0;
     margin: auto;
-  
 }
 .input_cover label{
     padding-top: 25px;
-}
-input{
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    border: var(--input-border);
-    width: 300px; 
-    cursor: pointer;
-}
-
-.input:hover{
-    color: var(--input-hover);
-   
-}
-label{
-    font-size: 12px;
-}
-small{
-    line-height: 2;
-    color: var(--error-text);
-    visibility: hidden;
 }
 #num_error{
     color: var(--error-text);
@@ -133,19 +217,11 @@ display: block;
     text-align: center;
     margin: auto;
     display: none;
+
 }
 .confirm_input p{
    color: var(--confirm-text);
    line-height: 3;
-}
-button{
-    background-color: var(--button-color) !important;
-    padding: 10px 80px;
-    color: var(--button-text-color);
-    border: none;
-    border-radius: 5px;
-    margin-top: 30px;
-    width: 300px; 
 }
 
 }

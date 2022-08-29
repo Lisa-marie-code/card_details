@@ -1,23 +1,24 @@
 
-function validateNum() {
-  let numDetails = document.getElementById("number_details").value;
-  let carding =  /^\d{16}$/;
+// function validateNum() {
+//   let numDetails = document.getElementById("number_details").value;
+//   let carding =  /^\d{19}$/;
 
-  if (carding.test(numDetails)) {
-    document.getElementById("num_error").style.visibility = "hidden";
+//   if (carding.test(numDetails)) {
+//     document.getElementById("num_error").style.visibility = "hidden";
     
-    console.log(numDetails);
-  } else {
-    document.getElementById("num_error").style.visibility = "visible";
-    document.getElementsByName("number-exact")[0].style.borderColor = "red";
-  }
-  }
+//     console.log(numDetails);
+//   } else {
+//     document.getElementById("num_error").style.visibility = "visible";
+//     document.getElementsByName("number-exact")[0].style.borderColor = "red";
+  
+//   }
+//   }
 
   
 
   
 document.getElementById('holder_details').oninput = () =>{
- let holder = document.getElementById('card_name_new').innerText = document.getElementById('holder_details').value;
+ let holder = document.getElementById('card_name_new').innerText= document.getElementById('holder_details').value.toUpperCase();
  console.log(holder);
  localStorage.setItem('holder',JSON.stringify(holder));
 }
@@ -35,15 +36,17 @@ document.getElementById('exp_year').oninput = () =>{
 }
 
 document.getElementById('exp_cvc').oninput = () =>{
-  document.getElementById('cvc_newInput').innerText = document.getElementById('exp_cvc').value;
+  document.getElementById('cvc_newInput').innerText= document.getElementById('exp_cvc').value;
 }
 
+document.getElementById('number_details').addEventListener('input', function(e){
+e.target.value = e.target.value.replace(/[^\d]/g, '').replace(/(.{4})/g, '$1 ').trim();
+})
 
 
 
 if(validateNum){
-let confirmSuccess = document.getElementById('confirm_cover');
-
+let confirmSuccess = document.querySelector('confirm_cover');
 confirmSuccess.style.display = 'block';
 }else{
   confirmSuccess.style.display = 'none';
